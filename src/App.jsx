@@ -132,7 +132,7 @@ function Nav({ mode }) {
     ["sources", "Source stack", "來源堆疊"],
   ];
   return (
-    <div className="sticky top-[88px] z-20 border-b border-stone-200 bg-[#FCFAF2]/90 backdrop-blur">
+    <div className="border-b border-stone-200 bg-[#FCFAF2]/90 backdrop-blur">
       <div className="mx-auto max-w-7xl overflow-x-auto px-4 py-3 sm:px-6 lg:px-8">
         <div className="flex min-w-max gap-2">
           {items.map(([id, en, zh]) => (
@@ -286,18 +286,18 @@ export default function TargetInChatGPTInfrastructure() {
               </div>
 
               <div className="space-y-4">
-                <Copy mode={mode} as="div" en="Target in ChatGPT" zh="Target in ChatGPT" className="text-xs font-semibold uppercase tracking-[0.24em] text-stone-500" />
+                <Copy mode={mode} as="div" en="Case brief" zh="案例重點" className="text-xs font-semibold uppercase tracking-[0.24em] text-stone-500" />
                 <Copy
                   mode={mode}
                   as="h1"
-                  en="How conversational AI is changing product discovery, retail media, and channel power"
-                  zh="對話式 AI 如何改變商品探索、零售媒體與通路權力"
+                  en="Target in ChatGPT"
+                  zh="Target in ChatGPT"
                   className="max-w-4xl text-4xl font-semibold leading-tight tracking-tight text-stone-900 sm:text-5xl"
                 />
                 <Copy
                   mode={mode}
-                  en="This rebuild treats the case as a user-facing learning surface instead of a plain article summary. It adds the official rules of the ad test, the broader commerce sequence Target has already been building inside ChatGPT, and the adjacent protocol layer that makes this case strategically larger than one retailer testing one ad format."
-                  zh="這份重建把案例當成面向讀者的學習介面，而不是單純的文章摘要。它補進了廣告測試的正式規則、Target 先前已在 ChatGPT 內鋪設的更大商務路徑，以及讓此案例戰略意義超過單一零售商測試單一廣告格式的協定層脈絡。"
+                  en="An early look at how conversational AI may reshape discovery, retail media, and shopping behavior."
+                  zh="一個提早觀察對話式 AI 如何改變商品探索、零售媒體與購物行為的案例。"
                   className="max-w-3xl text-sm leading-7 text-stone-700 sm:text-[15px]"
                 />
               </div>
@@ -331,26 +331,24 @@ export default function TargetInChatGPTInfrastructure() {
           </div>
         </div>
       </header>
-
-      <StickyStrip mode={mode} />
       <Nav mode={mode} />
 
-      <main className="mx-auto max-w-7xl space-y-20 px-4 py-10 sm:px-6 lg:px-8 lg:space-y-24 lg:py-14">
+      <main className="mx-auto max-w-7xl space-y-20 px-4 py-10 pb-24 sm:px-6 lg:px-8 lg:space-y-24 lg:py-14 lg:pb-28">
         <section className="space-y-8" id="overview">
           <SectionTitle
             mode={mode}
             id="overview"
             kickerEn="Overview"
             kickerZh="總覽"
-            titleEn="What this page adds beyond the article"
-            titleZh="這一頁比原始文章多補了甚麼"
-            bodyEn="The article itself is directionally right. The problem is not accuracy. The problem is scope. Without the wider context, readers can mistake this for a small ad pilot rather than an early test of a new decision environment where recommendation, comparison, advertising, and transaction pathways may increasingly converge."
-            bodyZh="文章本身的方向是對的，問題不在準確度，而在範圍。若少了更大的脈絡，讀者很容易把它誤讀成一個小型廣告試點，而不是一個新的決策環境的早期測試。在這個環境裡，推薦、比較、廣告與交易路徑未來可能逐漸匯流。"
+            titleEn="Why this matters now"
+            titleZh="為何這件事現在值得注意"
+            bodyEn="At first glance, this may look like a narrow media experiment. In reality, it matters because it points to a new decision environment where recommendation, comparison, advertising, and transaction pathways may increasingly sit inside the same AI interaction."
+            bodyZh="乍看之下，這像是一個範圍不大的媒體測試。實際上它之所以重要，是因為它指向一種新的決策環境，在這個環境裡，推薦、比較、廣告與交易路徑，未來可能愈來愈常出現在同一段 AI 互動之中。"
           />
 
           <div className="grid gap-5 lg:grid-cols-2">
             <Card>
-              <div className="mb-4 text-sm font-semibold text-stone-900">{inline(mode, "What is now included", "這裡額外補進的內容")}</div>
+              <div className="mb-4 text-sm font-semibold text-stone-900">{inline(mode, "Three things to notice", "三個值得注意的地方")}</div>
               <div className="space-y-3">
                 {[
                   ["Official OpenAI rules on answer independence, privacy, sensitive topics, and aggregate reporting.", "OpenAI 對答案獨立、隱私、敏感主題與彙總成效回報的正式規則。"],
@@ -367,7 +365,7 @@ export default function TargetInChatGPTInfrastructure() {
             </Card>
 
             <Card>
-              <div className="mb-4 text-sm font-semibold text-stone-900">{inline(mode, "What readers would otherwise miss", "若沒有這些脈絡，讀者容易漏掉的地方")}</div>
+              <div className="mb-4 text-sm font-semibold text-stone-900">{inline(mode, "Three easy misreads", "三個常見誤讀")}</div>
               <div className="space-y-3">
                 {[
                   ["The move can look like an ad-format story when it is also a channel-power story.", "這件事表面像廣告格式故事，但本質上也同時是通路權力的故事。"],
@@ -641,15 +639,15 @@ export default function TargetInChatGPTInfrastructure() {
             id="classuse"
             kickerEn="Class use"
             kickerZh="課堂使用"
-            titleEn="Most usable classroom version"
-            titleZh="最可直接拿去上課用的版本"
-            bodyEn="For class, the strongest approach is to reduce the case to one clean thesis, one cautious limitation, one framework connection, and one sharp question. That keeps the remark short, but still strategic."
-            bodyZh="就課堂來說，最強的做法是把案例壓成一個乾淨主論點、一個審慎限制、一個框架連結，以及一個尖銳問題。這樣發言可以短，但仍然有戰略密度。"
+            titleEn="Discussion lens"
+            titleZh="討論切入點"
+            bodyEn="The cleanest way to discuss this case is to hold onto one central idea, one clear limitation, and one question about long-term value capture. That keeps the discussion readable and strategic at the same time."
+            bodyZh="要討論這個案例，最好的方式是抓住一個核心觀點、一個明確限制，以及一個關於長期價值捕捉的問題。這樣既容易理解，也仍保有戰略密度。"
           />
 
           <div className="grid gap-5 lg:grid-cols-2">
             <Card>
-              <div className="mb-4 text-sm font-semibold text-stone-900">{inline(mode, "90-second oral version", "90 秒口頭版")}</div>
+              <div className="mb-4 text-sm font-semibold text-stone-900">{inline(mode, "Main takeaway", "主要結論")}</div>
               <div className="rounded-3xl bg-stone-50 p-4 text-sm leading-7 text-stone-700">
                 {inline(
                   mode,
@@ -660,7 +658,7 @@ export default function TargetInChatGPTInfrastructure() {
             </Card>
 
             <Card>
-              <div className="mb-4 text-sm font-semibold text-stone-900">{inline(mode, "Best follow-up question", "最佳追問問題")}</div>
+              <div className="mb-4 text-sm font-semibold text-stone-900">{inline(mode, "Question worth asking", "值得追問的問題")}</div>
               <div className="rounded-3xl bg-stone-50 p-4 text-sm leading-7 text-stone-700">
                 {inline(
                   mode,
@@ -678,10 +676,10 @@ export default function TargetInChatGPTInfrastructure() {
             id="sources"
             kickerEn="Source stack"
             kickerZh="來源堆疊"
-            titleEn="Source stack used to rebuild the case"
-            titleZh="用來重建此案例的來源堆疊"
-            bodyEn="This page is built from the supplied article summary plus the official public materials that materially expand or clarify the case. The goal is not to flood the reader with citations. The goal is to ensure the structure is grounded in the most useful source layers."
-            bodyZh="這一頁建立在您提供的文章整理之上，再補入能夠實質擴充或澄清案例的官方公開材料。目標不是把讀者淹沒在引文裡，而是確保整體結構建立在最有用的來源層上。"
+            titleEn="Source basis"
+            titleZh="資料基礎"
+            bodyEn="The page is grounded in the supplied article summary, then strengthened with the official public materials that most clearly expand or clarify the case. The purpose is to keep the structure readable while preserving source discipline."
+            bodyZh="這一頁以您提供的文章整理為基礎，再補入最能實質擴充或釐清案例的官方公開材料。目的不是堆滿引用，而是在可讀性與來源紀律之間取得平衡。"
           />
 
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -695,22 +693,9 @@ export default function TargetInChatGPTInfrastructure() {
               </Card>
             ))}
           </div>
-
-          <Card>
-            <div className="mb-4 text-sm font-semibold text-stone-900">{inline(mode, "Final completeness check", "最後完整性檢查")}</div>
-            <div className="grid gap-4 md:grid-cols-3">
-              {[
-                ["Most correct", "Uses the supplied article, then cross-checks it against official Target and OpenAI materials.", "最正確", "先保留原文，再用 Target 與 OpenAI 官方材料交叉核對。"],
-                ["Most accurate", "Separates confirmed facts from inference and explicitly marks the current limits of what is known.", "最準確", "把已確認事實與推論分開，並明確標示目前已知資訊的邊界。"],
-                ["Most complete", "Adds the broader sequence around shopping, ads, and protocol infrastructure so the case can be discussed strategically, not just descriptively.", "最完整", "補入購物、廣告與協定基礎設施的更大序列，使此案例可以被戰略性討論，而不只是描述性轉述。"],
-              ].map(([enA, enB, zhA, zhB]) => (
-                <div key={enA} className="rounded-2xl bg-stone-50 px-4 py-3">
-                  <div className="text-sm font-semibold text-stone-900">{inline(mode, enA, zhA)}</div>
-                  <div className="mt-1 text-sm leading-7 text-stone-700">{inline(mode, enB, zhB)}</div>
-                </div>
-              ))}
-            </div>
-          </Card>
+          <div className="rounded-3xl border border-stone-200 bg-white/70 px-4 py-4 text-sm leading-7 text-stone-600">
+            {inline(mode, "The structure here is built for general readers first: a clear thesis, a visible process, the main strategic implications, and only the most relevant source layer notes.", "這裡的結構優先是為一般讀者設計：先給清楚主論點、再看運作方式、接著理解主要戰略意涵，最後只保留最相關的來源層註記。")}
+          </div>
         </section>
       </main>
     </div>
